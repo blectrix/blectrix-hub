@@ -2,32 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --gradient: linear-gradient(to top left,#360033,#0b8793);
+    --background: -60 100% 98.22%;
+    --foreground: -60 10% 0.44%;
+    --muted: -60 10% 91.1%;
+    --muted-foreground: -60 5% 41.1%;
+    --popover: -60 22% 94.66%;
+    --popover-foreground: -60 10% 0.55%;
+    --card: -60 22% 94.66%;
+    --card-foreground: -60 10% 0.55%;
+    --border: -60 15% 89.44%;
+    --input: -60 15% 89.44%;
+    --primary: -60 100% 11%;
+    --primary-foreground: -60 2% 91.1%;
+    --secondary: -60 11% 96.44%;
+    --secondary-foreground: -60 7% 11.1%;
+    --accent: -60 11% 96.44%;
+    --accent-foreground: -60 7% 11.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: -60 100% 11%;
+    --radius: 1rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --gradient: linear-gradient(to top left,#6025F5,#FF5555);
+    --background: 273 59.15% 4.4%;
+    --foreground: 273 9.1% 97.75%;
+    --muted: 273 60.97% 15.950000000000001%;
+    --muted-foreground: 273 9.1% 55.5%;
+    --popover: 273 79.56% 6.6000000000000005%;
+    --popover-foreground: 273 9.1% 97.75%;
+    --card: 273 79.56% 6.6000000000000005%;
+    --card-foreground: 273 9.1% 97.75%;
+    --border: 273 60.97% 15.950000000000001%;
+    --input: 273 60.97% 15.950000000000001%;
+    --primary: 273 91% 55%;
+    --primary-foreground: 273 9.1% 5.5%;
+    --secondary: 273 60.97% 15.950000000000001%;
+    --secondary-foreground: 273 9.1% 97.75%;
+    --accent: 273 60.97% 15.950000000000001%;
+    --accent-foreground: 273 9.1% 97.75%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 273 9.1% 97.75%;
+    --ring: 273 91% 55%;
+    --radius: 1rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
